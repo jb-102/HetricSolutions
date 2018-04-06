@@ -12,17 +12,17 @@
 <?php
     include("inc/db.php");
 
-$photo = mysqli_query($con, "SELECT COUNT(*) AS `count` FROM `tbl_photo`");
-$row_photo = mysqli_fetch_array($photo);
-$photo_count = $row_photo['count'];
+// $photo = mysqli_query($con, "SELECT COUNT(*) AS `count` FROM `tbl_photo`");
+// $row_photo = mysqli_fetch_array($photo);
+// $photo_count = $row_photo['count'];
 
-$buyer_count = mysqli_query($con, "SELECT COUNT(*) AS `count` FROM `tbl_video`");
-$row_buyer_count = mysqli_fetch_array($buyer_count);
-$buyer_count_value = $row_buyer_count['count'];
+// $buyer_count = mysqli_query($con, "SELECT COUNT(*) AS `count` FROM `tbl_video`");
+// $row_buyer_count = mysqli_fetch_array($buyer_count);
+// $buyer_count_value = $row_buyer_count['count'];
 
-$buyer_count1 = mysqli_query($con, "SELECT COUNT(*) AS `count` FROM `tbl_package`");
-$row_buyer_count1 = mysqli_fetch_array($buyer_count1);
-$buyer_count_value1 = $row_buyer_count1['count'];
+// $buyer_count1 = mysqli_query($con, "SELECT COUNT(*) AS `count` FROM `tbl_package`");
+// $row_buyer_count1 = mysqli_fetch_array($buyer_count1);
+// $buyer_count_value1 = $row_buyer_count1['count'];
 
 
 ?>
@@ -52,7 +52,7 @@ $buyer_count_value1 = $row_buyer_count1['count'];
                                 <div class="panel-body">
                                     <div class="statistic-box">
                                         <h2 style="width:100%;text-align: right;">
-                                            <span class="count-number"><?=$photo_count?></span>
+                                            <span class="count-number"><?//=$photo_count?></span>
                                         </h2>
                                     </div>
                                     <div class="items pull-left">
@@ -68,7 +68,7 @@ $buyer_count_value1 = $row_buyer_count1['count'];
                                 <div class="panel-body">
                                     <div class="statistic-box">
                                         <h2 style="width:100%;text-align: right;">
-                                            <span class="count-number"><?=$buyer_count_value?></span>
+                                            <span class="count-number"><?//=$buyer_count_value?></span>
                                         </h2>
                                     </div>
                                     <div class="items pull-left">
@@ -85,7 +85,7 @@ $buyer_count_value1 = $row_buyer_count1['count'];
                                 <div class="panel-body">
                                     <div class="statistic-box">
                                         <h2 style="width:100%;text-align: right;">
-                                            <span class="count-number"><?=$buyer_count_value1?></span>
+                                            <span class="count-number"><?//=$buyer_count_value1?></span>
                                         </h2>
                                     </div>
                                     <div class="items pull-left">
@@ -136,17 +136,21 @@ $buyer_count_value1 = $row_buyer_count1['count'];
                                             <tr>
                                                 <th>SNo.</th>
                                                 <th> Name</th>
-                                                <th>Mobile</th>
-                                                <th>Email</th>
-                                                <th>Check In</th>
-                                                <th>Check Out </th>
-                                                <th>Package Type</th>
-                                                <th>No. of Guest</th>
+                                                <th>IP Address</th>
+                                                <th>Runame</th>
+                                                <th>Rpassword</th>
+                                                <th>Sql_server </th>
+                                                <th>sa password</th>
+                                                <th>table name</th>
+                                                <th>field name</th>
+                                                <th>Heritic Username</th>
 
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
+                                                <td></td>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -163,19 +167,21 @@ $buyer_count_value1 = $row_buyer_count1['count'];
                                             
                                                 include("inc/db.php");
                                                 $sno = 0;
-                                                $select = "SELECT * FROM `tbl_booking` order by booking_id desc LIMIT 6";
+                                                $select = "SELECT * FROM `tbl_customer` order by customer_id desc LIMIT 6";
                                                 $run = mysqli_query($con, $select);
                                                 
                                                 while($row = mysqli_fetch_array($run)){
                                                     
-                                                    $id = $row['booking_id'];
+                                                    $id = $row['customer_id'];
                                                     $name = $row['name'];
-                                                    $mobile = $row['mobile'];
-                                                    $email = $row['email'];
-                                                    $checkin = $row['checkin'];
-                                                    $checkout = $row['checkout'];
-                                                    $Packagetype = $row['packagetype'];
-                                                    $guest = $row['no_of_guest'];
+                                                    $ipaddress = $row['ipaddress'];
+                                                    $Runame = $row['Runame'];
+                                                    $Rpassword = $row['Rpassword'];
+                                                    $sql_server = $row['sql_server'];
+                                                    $sa_password = $row['sa_password'];
+                                                    $table_name = $row['table_name'];
+                                                    $field_name = $row['field_name'];
+                                                    $heritic_username = $row['heritic_username'];
 
                                                     $sno++;
                                                     
@@ -186,17 +192,19 @@ $buyer_count_value1 = $row_buyer_count1['count'];
                                                 
                                                 <td>  <?php echo $name; ?>  </td>
                                                 
-                                                <td>  <?php echo $mobile; ?>  </td>
+                                                <td>  <?php echo $ipaddress; ?>  </td>
 
-                                                <td>  <?php echo $email; ?>  </td>
+                                                <td>  <?php echo $Runame; ?>  </td>
                                                 
-                                                <td>  <?php echo $checkin; ?>  </td>
+                                                <td>  <?php echo $Rpassword; ?>  </td>
                                                 
-                                                <td>  <?php echo $checkout; ?>  </td>
+                                                <td>  <?php echo $sql_server; ?>  </td>
                                                 
-                                                <td>  <?php echo $Packagetype; ?>  </td>
+                                                <td>  <?php echo $sa_password; ?>  </td>
                                                 
-                                                <td>  <?php echo $guest; ?>  </td>
+                                                <td>  <?php echo $table_name; ?>  </td>
+                                                <td>  <?php echo $field_name; ?>  </td>
+                                                <td>  <?php echo $heritic_username; ?>  </td>
                                                 
                                             </tr>
                                             
