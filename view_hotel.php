@@ -56,15 +56,19 @@
                                             <table class="table table-bordered table-hover table-responsive">
                                                 <thead>
                                                     <tr>
-                                                        <th>id</th>
-                                                        <th>Name</th>
-                                                        <th style="width:100px;">IP Address</th>
-                                                        <th>Runame</th>
-                                                        <th style="width:75px">Rpassword</th>
-                                                        <th style="width:100px">Sql Server</th>
-                                                        <th style="width:110px">Sa password</th>
-                                                        <th style="width:110px">table Name</th>
-                                                        <th style="width:110px">Field Name</th>
+
+                                                <th>SNo.</th>
+                                                <th> Name</th>
+                                                <th>Customer Type</th>
+                                                <th>IP Address</th>
+                                                <th>Runame</th>
+                                                <th>Rpassword</th>
+                                                <th>Sql_server </th>
+                                                <th>sa password</th>
+                                                <th>table name</th>
+                                                <th>field name</th>
+                                                <th>Heritic Username</th>
+                                                <th>Heritic Username</th>
                                                         <th> Action</th>
                                                     </tr>
                                                 </thead>
@@ -76,30 +80,44 @@
         $run_customer = mysqli_query($con , $select_customer);
         while ($row_customer = mysqli_fetch_array($run_customer)) 
         {
-            $customer_id = $row_customer['customer_id'];
+            $id = $row_customer['customer_id'];
             $name = $row_customer['name'];
+            $customer_type = $row_customer['customer_type'];
             $ipaddress = $row_customer['ipaddress'];
-            $Runame= $row_customer['Runame'];
+            $Runame = $row_customer['Runame'];
             $Rpassword = $row_customer['Rpassword'];
             $sql_server = $row_customer['sql_server'];
-             $sa_password = $row_customer['sa_password'];
+            $sa_password = $row_customer['sa_password'];
             $table_name = $row_customer['table_name'];
             $field_name = $row_customer['field_name'];
+            $heritic_username = $row_customer['heritic_username'];
+            $heritic_password = $row_customer['heritic_password'];
             $sno++ ;
 
     ?>
     <tr>  
         
+                <td><?php echo $sno; ?></td>
+                
+                <td>  <?php echo $name; ?>  </td>
 
-         <td> <?php echo $sno;  ?></td>
-         <td> <?php echo $row_customer['name']  ?></td>
-         <td> <?php echo $row_customer['ipaddress']  ?></td>
-         <td>  <?php echo $row_customer['Runame']  ?></td>
-         <td>  <?php echo $row_customer['Rpassword']  ?></td>
-         <td>   <?php echo $row_customer['sql_server']  ?></td>
-         <td>   <?php echo $row_customer['sa_password']  ?></td>
-         <td> <?php echo $row_customer['table_name']  ?></td>
-         <td> <?php echo $row_customer['field_name']  ?></td>
+                <td>  <?php echo $customer_type; ?>  </td>
+                
+                <td>  <?php echo $ipaddress; ?>  </td>
+
+                <td>  <?php echo $Runame; ?>  </td>
+                
+                <td>  <?php echo $Rpassword; ?>  </td>
+                
+                <td>  <?php echo $sql_server; ?>  </td>
+                
+                <td>  <?php echo $sa_password; ?>  </td>
+                
+                <td>  <?php echo $table_name; ?>  </td>
+                <td>  <?php echo $field_name; ?>  </td>
+                <td>  <?php echo $heritic_username; ?>  </td>
+                <td>  <?php echo $heritic_password; ?>  </td>
+        
          <td>
             
             <a href="edit_hotel.php?customer_id=<?=$customer_id?>" style="color:white"> 

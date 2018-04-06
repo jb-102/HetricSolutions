@@ -136,6 +136,7 @@
                                             <tr>
                                                 <th>SNo.</th>
                                                 <th> Name</th>
+                                                <th>Customer Type</th>
                                                 <th>IP Address</th>
                                                 <th>Runame</th>
                                                 <th>Rpassword</th>
@@ -144,11 +145,14 @@
                                                 <th>table name</th>
                                                 <th>field name</th>
                                                 <th>Heritic Username</th>
+                                                <th>Heritic Username</th>
 
                                             </tr>
                                         </thead>
                                         <tfoot>
                                             <tr>
+                                                <td></td>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -174,6 +178,7 @@
                                                     
                                                     $id = $row['customer_id'];
                                                     $name = $row['name'];
+                                                    $customer_type = $row['customer_type'];
                                                     $ipaddress = $row['ipaddress'];
                                                     $Runame = $row['Runame'];
                                                     $Rpassword = $row['Rpassword'];
@@ -182,6 +187,7 @@
                                                     $table_name = $row['table_name'];
                                                     $field_name = $row['field_name'];
                                                     $heritic_username = $row['heritic_username'];
+                                                    $heritic_password = $row['heritic_password'];
 
                                                     $sno++;
                                                     
@@ -191,6 +197,8 @@
                                                 <td><?php echo $sno; ?></td>
                                                 
                                                 <td>  <?php echo $name; ?>  </td>
+
+                                                <td>  <?php echo $customer_type; ?>  </td>
                                                 
                                                 <td>  <?php echo $ipaddress; ?>  </td>
 
@@ -205,6 +213,7 @@
                                                 <td>  <?php echo $table_name; ?>  </td>
                                                 <td>  <?php echo $field_name; ?>  </td>
                                                 <td>  <?php echo $heritic_username; ?>  </td>
+                                                <td>  <?php echo $heritic_password; ?>  </td>
                                                 
                                             </tr>
                                             

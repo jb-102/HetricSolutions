@@ -68,26 +68,83 @@
                                                 <input type="password" name="Rpassword" placeholder="Enter Rpassword" class="form-control" required>
                                             </div>
                                               <div class="col-sm-4 form-group">
-                                                <label>sql_server</label>
-                                                <input type="text" name="sql_server" placeholder="Enter sql_server" class="form-control" required>
+                                                <label>Sql Server</label>
+                                                <input type="text" name="sql_server" placeholder="Enter sql server" class="form-control" required>
                                             </div>
                                               <div class="col-sm-4 form-group">
-                                                <label>sa_password</label>
-                                                <input type="password" name="sa_password" placeholder="Enter sa_password" class="form-control" required>
+                                                <label>SA Password</label>
+                                                <input type="text" name="sa_password" placeholder="Enter sa password" class="form-control" required>
                                             </div>
                                               <div class="col-sm-4 form-group">
-                                                <label>table_name</label>
-                                                <input type="text" name="table_name" placeholder="Enter table_name" class="form-control" required>
+                                                <label>Table Name</label>
+                                                <input type="text" name="table_name" placeholder="Enter table name for Guest name" class="form-control" required>
                                             </div>
-                                               <div class="col-sm-4 form-group">
-                                                <label>field_name</label>
-                                                <input type="text" name="field_name" placeholder="Enter field_name" class="form-control" required>
+                                            <div class="col-sm-4 form-group">
+                                                <label>Field Name</label>
+                                                <input type="text" name="field_name" placeholder="Enter field name for Guest name" class="form-control" required>
                                             </div>
+
+
+                                            <div class="col-sm-4 form-group">
+                                                <label>Table Room no.</label>
+                                                <input type="text" name="table_room_no" placeholder="Enter Table Name for Room no" class="form-control" required>
+                                            </div>
+
+
+                                            <div class="col-sm-4 form-group">
+                                                <label>Field Room no.</label>
+                                                <input type="text" name="field_room_no" placeholder="Enter Field Name for Room no" class="form-control" required>
+                                            </div>
+
+                                            <div class="col-sm-4 form-group">
+                                                <label>Table Checkin</label>
+                                                <input type="text" name="table_checkin" placeholder="Enter table name for checkin" class="form-control" required>
+                                            </div>
+
+                                            <div class="col-sm-4 form-group">
+                                                <label>Field Checkin</label>
+                                                <input type="text" name="field_checkin" placeholder="Enter field name for checkin" class="form-control" required>
+                                            </div>
+
+
+                                            <div class="col-sm-4 form-group">
+                                                <label>Table Checkout</label>
+                                                <input type="text" name="table_checkout" placeholder="Enter table name for Checkout" class="form-control" required>
+                                            </div>
+
+
+                                            <div class="col-sm-4 form-group">
+                                                <label>Field Checkout</label>
+                                                <input type="text" name="field_checkout" placeholder="Enter field name for Checkout" class="form-control" required>
+                                            </div>
+
+                                            <div class="col-sm-4 form-group">
+                                                <label>Customer Type</label>
+                                                <input type="text" name="customer_type" placeholder="Enter customer type" class="form-control" required>
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label>Heritic Username</label>
+                                                <input type="text" name="heritic_username" placeholder="Enter customer panel username" class="form-control" required>
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label>Heritic Password</label>
+                                                <input type="text" name="heritic_password" placeholder="Enter customer panel password" class="form-control" required>
+                                            </div>
+                                            <div class="col-sm-4 form-group">
+                                                <label>Database Name</label>
+                                                <input type="text" name="db_name" placeholder="Enter Database name" class="form-control" required>
+                                            </div>
+
+
+
                                               <div class="col-sm-12 reset-button">
-                                                 
-                                                 <button class="btn btn-success"  name="customer_submit">Save</button>
-                                                 <button class="btn btn-warning" type="submit" name="seller_cancel">Cancel</button>
+                                                 <center>
+                                                 <button class="btn btn-primary" style="width:100px;"  name="customer_submit">Save</button>
+                                                 <button class="btn btn-danger" style="width:100px;" type="submit" name="seller_cancel">Cancel</button>
+                                                 </center>
                                              </div>
+
+                                            </div>
                                          </form>
 
 <?php
@@ -103,9 +160,21 @@
                                              $sa_password = $_POST['sa_password'];
                                             $table_name = $_POST['table_name'];
                                             $field_name = $_POST['field_name'];
+                                            $heritic_username = $_POST['heritic_username'];
+                                            $heritic_password = $_POST['heritic_password'];
+                                            $customer_type = $_POST['customer_type'];
+                                            
+                                            $table_room_no = $_POST['table_room_no'];
+                                            $field_room_no = $_POST['field_room_no'];
+                                            $table_checkin = $_POST['table_checkin'];
+                                            $field_checkin = $_POST['field_checkin'];
+                                            $table_checkout = $_POST['table_checkout'];
+                                            $field_checkout = $_POST['field_checkout'];
+                                            $db_name = $_POST['db_name'];
+
                
                                            
-$insert_customer = "insert into tbl_customer (name, ipaddress,Runame,Rpassword,sql_server,sa_password,table_name,field_name) values('$name','$ipaddress','$Runame','$Rpassword','$sql_server','$sa_password','$table_name','$field_name') ";
+$insert_customer = "insert into tbl_customer (name, ipaddress,Runame,Rpassword,sql_server,sa_password,table_name,field_name, table_room_no,field_room_no,table_checkin,field_checkin,table_checkout,field_checkout,heritic_username,heritic_password,customer_type,db_name) values('$name','$ipaddress','$Runame','$Rpassword','$sql_server','$sa_password','$table_name','$field_name','$table_room_no','$field_room_no','$table_checkin','$field_checkin','$table_checkout', '$field_checkout','$heritic_username','$heritic_password','$customer_type','$db_name') ";
         $run_customer = mysqli_query($con,$insert_customer);
         if($run_customer)
         {
